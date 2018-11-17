@@ -24,7 +24,7 @@ class Input extends React.Component{
                         value={this.state.text}
                         type='text'
                         placeholder='Enter your message and press ENTER'
-                        autoFocus='true'
+                        autoFocus={true}
                     />
                     <button>Send</button>
                 </form>

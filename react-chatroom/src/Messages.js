@@ -8,14 +8,14 @@ class Messages extends React.Component{
         const className = messageFromMe ? "Messages-message currentMember" : "Messages-message"
 
         return (
-            <li className={className}>
+            <li className={className} key={message}>
                 <span 
                     className='avatar' 
-                    style={{ backgroundColor: member.color }} 
+                    style={{ backgroundColor: member.clientData.color }} 
                 />
                 <div className='Message-content'>
                     <div className='username'>
-                        {member.username}
+                        {member.clientData.username}
                     </div>
                     <div className='text'>{text}</div>
                 </div>
@@ -27,9 +27,9 @@ class Messages extends React.Component{
         const {messages} = this.props
         return(
             <ul className='Messages-List'>
-            {messages.map((m) => {
-                return this.renderMessage(m)
-            })}
+                {messages.map((message) => {
+                    return this.renderMessage(message)
+                })}
             </ul>
         )
     }
